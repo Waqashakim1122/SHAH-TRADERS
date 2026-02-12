@@ -64,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { name: 'Fulfillment', path: '/solutions/fulfillment' },
-                { name: 'Transportation', path: '/solutions/transportation' },
+                { name: 'PackingLabeling', path: '/solutions/packinglabeling' },
                 { name: 'Warehousing', path: '/solutions/warehousing' },
                 { name: 'All Solutions', path: '/solutions' },
               ].map((item, i) => (
@@ -250,3 +250,4 @@ export default function Footer() {
   );
 
 }
+
