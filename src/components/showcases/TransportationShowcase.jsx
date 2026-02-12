@@ -1,8 +1,8 @@
-// src/components/TransportationShowcase.jsx
+// src/components/PackingLabelingShowcase.jsx
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
-export default function TransportationShowcase() {
+export default function PackingLabelingShowcase() {
   return (
     <section className="relative bg-[#020617] py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden border-t border-gray-800/30">
       <div className="absolute inset-0 pointer-events-none">
@@ -20,20 +20,26 @@ export default function TransportationShowcase() {
             className="space-y-4 sm:space-y-6 md:space-y-8 lg:order-2"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Transportation
+              Packing & Labeling
             </h2>
 
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
-              Is your team tracking containers with Excel Sheets, emails and constant phone calls to your forwarder, warehouse and drayage team? We are the first in the industry to give full, live visibility of each container from pick up to delivery and back to the port!
+              Professional packing and custom labeling services to ensure your products arrive safely and look perfect. From custom inserts to branded packaging, we handle every detail so your customers receive an exceptional unboxing experience.
             </p>
 
             {/* Video on mobile */}
             <div className="lg:hidden my-10">
-              <VideoOnlyCard videoSrc="/videos/transportation-demo.mp4" />
+              <VideoOnlyCard videoSrc="/videos/packing-labeling-demo.mp4" />
             </div>
 
             <ul className="space-y-3 sm:space-y-4">
-              {["Real-time container tracking", "Competitive LTL and FTL rates", "Setup shipments with ease", "Two day ground delivery"].map((bullet, i) => (
+              {[
+                "Custom branded packaging",
+                "Professional labeling services",
+                "Protective packing materials",
+                "Gift wrapping options",
+                "Insert and promotional material inclusion"
+              ].map((bullet, i) => (
                 <li key={i} className="flex items-start gap-3 text-gray-200 text-sm sm:text-base md:text-lg">
                   <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-cyan-400 mt-1 flex-shrink-0" />
                   {bullet}
@@ -49,7 +55,7 @@ export default function TransportationShowcase() {
 
           {/* Video on desktop */}
           <div className="hidden lg:flex lg:justify-center lg:items-center lg:order-1">
-            <VideoOnlyCard videoSrc="/videos/transportation-demo.mp4" />
+            <VideoOnlyCard videoSrc="/videos/packing-labeling-demo.mp4" />
           </div>
         </div>
       </div>
@@ -65,18 +71,18 @@ function VideoOnlyCard({ videoSrc }) {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="
-        rounded-3xl               /* softer corners for premium look */
+        rounded-3xl
         overflow-hidden 
-        shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)]   /* deeper, more elegant shadow */
-        bg-white                  /* pure white background */
-        aspect-[3/2.2]            /* bigger & more square-ish – feels larger */
+        shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)]
+        bg-white
+        aspect-[3/2.2]
         w-full 
-        max-w-3xl                 /* noticeably bigger card */
+        max-w-3xl
         mx-auto
       "
     >
       <video
-        className="w-full h-full object-contain bg-white"  // white background for letterbox
+        className="w-full h-full object-contain bg-white"
         autoPlay
         loop
         muted
