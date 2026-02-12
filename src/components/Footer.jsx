@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="lg:col-span-1 space-y-6">
             <div>
               <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-600">
-                3PL CENTER
+               SHAH TRADERS
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed font-light">
@@ -248,4 +248,5 @@ export default function Footer() {
       `}</style>
     </footer>
   );
+
 }
