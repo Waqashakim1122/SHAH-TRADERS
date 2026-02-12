@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, ChevronDown } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 import hero1 from '../assets/Hero/image1.jpg';
 import hero2 from '../assets/Hero/image2.jpg';
@@ -49,21 +49,21 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 text-center py-16 sm:py-20 md:py-0">
-        {/* Reduced Headline Size */}
+        {/* Headline */}
         <h1 className="
           text-3xl sm:text-4xl md:text-5xl lg:text-6xl
           font-display font-bold leading-tight mb-4 sm:mb-6 
           tracking-tight text-white animate-fade-in
           drop-shadow-2xl px-2
         ">
-          Delivering Excellence
+          End-to-End Fulfillment
           <br />
           <span className="inline-block mt-1 sm:mt-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
-            Across Every Mile
+            Built for Scale
           </span>
         </h1>
 
-        {/* Reduced Paragraph Size */}
+        {/* Professional Description */}
         <p className="
           text-sm sm:text-base md:text-lg
           text-gray-200 mb-8 sm:mb-10 
@@ -71,7 +71,7 @@ export default function Hero() {
           font-normal leading-relaxed animate-fade-in delay-200
           drop-shadow-lg px-4
         ">
-          From dock to doorstep, we orchestrate seamless logistics solutions that keep your business moving forward. Speed, reliability, and transparency in every shipment.
+          Transform your supply chain with our comprehensive 3PL solutions. From precision warehousing and custom packaging to same-day fulfillment, we deliver the operational excellence your business demands—backed by real-time visibility at every touchpoint.
         </p>
 
         {/* Tracking Input */}
@@ -136,7 +136,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .shadow-glow-cyan { box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); }
         .animate-fade-in { animation: fadeInUp 1.2s ease-out forwards; opacity: 0; }
         @keyframes fadeInUp {
