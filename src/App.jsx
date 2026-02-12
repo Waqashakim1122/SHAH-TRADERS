@@ -15,7 +15,7 @@ import ContactUs from './components/ContactUs';
 import GetQuote from './components/GetQuote';
 import SolutionsPage from './pages/SolutionsPage';
 import FulfillmentPage from './pages/FulfillmentPage';
-import TransportationPage from './pages/TransportationPage';
+import PackingLabelingPage from './pages/PackingLabelingPage';
 import WarehousingPage from './pages/WarehousingPage';
 import PricingSection from './components/PricingSection';
 // Remove these if they don't exist yet:
@@ -40,7 +40,7 @@ export default function App() {
           <Route path="/get-quote" element={<GetQuote />} />
           <Route path="/solutions" element={<SolutionsPage setActiveModal={setActiveModal} />} />
           <Route path="/solutions/fulfillment" element={<FulfillmentPage />} />
-          <Route path="/solutions/transportation" element={<TransportationPage />} />
+          <Route path="/solutions/PackingLabeling" element={<PackingLabelingPage />} />
           <Route path="/solutions/warehousing" element={<WarehousingPage />} />
           
           {/* Comment out routes for pages you haven't created yet */}
