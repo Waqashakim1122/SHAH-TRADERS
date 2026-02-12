@@ -29,7 +29,7 @@ export default function AboutUs() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
               This is{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-600">
-                3PL Center
+              Shah Traders
               </span>
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
@@ -304,3 +304,4 @@ export default function AboutUs() {
     </section>
   );
 }
+
