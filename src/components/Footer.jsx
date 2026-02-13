@@ -120,8 +120,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 mb-1 font-light">CALL US</p>
-                  <a href="tel:+18005557447" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm">
-                    +1 (800) 555-SHIP
+                  <a href="tel:+17865941795" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm">
+                   +17865941795
                   </a>
                 </div>
               </li>
@@ -132,7 +132,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-slate-500 mb-1 font-light">EMAIL</p>
                   <a href="mailto:quotes@3plcenter.com" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm">
-                    quotes@3plcenter.com
+                    info@shahtraders.com
                   </a>
                 </div>
               </li>
@@ -143,7 +143,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-slate-500 mb-1 font-light">HQ</p>
                   <p className="text-slate-300 text-sm font-light">
-                    123 Logistics Way<br />Chicago, IL 60607
+                   1213 Texas Ave<br />Cincinnati Ohio,45205
                   </p>
                 </div>
               </li>
@@ -209,9 +209,9 @@ export default function Footer() {
         {/* Bottom Section - Copyright & Legal */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm text-center md:text-left font-light">
-            © {new Date().getFullYear()} 3PL Center. All rights reserved.
+            © {new Date().getFullYear()} Shah Traders. All rights reserved.
             <span className="mx-2 text-slate-600">|</span>
-            <span className="text-slate-600">Three generations of logistics expertise</span>
+            <span className="text-slate-600">Three generations of business expertise</span>
           </p>
           
           <div className="flex items-center gap-6">
@@ -250,4 +250,5 @@ export default function Footer() {
   );
 
 }
+
 
