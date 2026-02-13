@@ -33,8 +33,8 @@ export default function AboutUs() {
               </span>
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At Shah Traders,Bussines isn't just what we do—it's in our DNA. As a Bussines
-              company with three generations of Bussines expertise, we've grown into a trusted
+              At Shah Traders, Business isn't just what we do—it's in our DNA. As a Business
+              company with three generations of business expertise, we've grown into a trusted
               partner for businesses across the U.S. Our full-service solutions cover every
               aspect of the supply chain, from drayage and fulfillment to advanced technology
               integrations.
@@ -304,5 +304,3 @@ export default function AboutUs() {
     </section>
   );
 }
-
-
