@@ -106,11 +106,9 @@ export default function AboutUs() {
               we are
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At the heart of Shah Traders is our visionary founder and CEO, Faisal Naseer. With logistics running through his family for three generations,
-              Faisal Naseer has built a company that values personal connections and
-              innovative solutions. His hands-on leadership reflects a deep
-              commitment to helping businesses succeed and finding smarter ways to
-              solve logistical challenges.
+              At the heart of Shah Traders is a legacy of  businesses excellence spanning three generations. 
+              Built on the foundation of personal connections and innovative solutions, our company reflects a hands-on leadership approach and a deep commitment to helping businesses succeed. 
+              We believe in finding smarter ways to solve logistical challenges, ensuring every client receives tailored solutions that drive their success forward.
             </p>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
               At Shah Traders, we're more than just a logistics provider—we're a family
@@ -304,3 +302,4 @@ export default function AboutUs() {
     </section>
   );
 }
+
