@@ -45,7 +45,7 @@ export default function GetQuote() {
             </span>
           </h1>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
-            See how 3PL Center can save you time and money. Choose the option that works best for you.
+            See how Shah-Traders can save you time and money. Choose the option that works best for you.
           </p>
         </motion.div>
 
@@ -218,7 +218,7 @@ export default function GetQuote() {
               <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-cyan-400/30 group-hover:bg-cyan-500/10 transition-all">
                 <PhoneCall className="w-5 h-5 text-cyan-400" />
               </div>
-              <span className="text-lg">(555) 123-4567</span>
+              <span className="text-lg">+17865941795</span>
             </a>
             <a 
               href="mailto:sales@3plcenter.com" 
@@ -227,11 +227,12 @@ export default function GetQuote() {
               <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-cyan-400/30 group-hover:bg-cyan-500/10 transition-all">
                 <Mail className="w-5 h-5 text-cyan-400" />
               </div>
-              <span className="text-lg">sales@3plcenter.com</span>
+              <span className="text-lg">info@shahtraders.com</span>
             </a>
           </div>
         </motion.div>
       </div>
     </section>
   );
+
 }
