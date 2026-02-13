@@ -242,40 +242,7 @@ export default function PricingCalculator() {
         </Section>
 
         {/* Local Delivery (Ohio) */}
-        <div ref={deliveryRef}>
-          <Section title="Local Delivery (Ohio)" icon={Calculator}>
-          <ServiceRow
-            label="Same-day delivery"
-            feeRange="$10 – $18"
-            fee="$14.00"
-            quantity={delivery.sameDay.qty}
-            subtotal={delivery.sameDay.qty * delivery.sameDay.rate}
-            onChange={(val) => updateQuantity('delivery', 'sameDay', val)}
-          />
-          <ServiceRow
-            label="Next-day delivery"
-            feeRange="$6 – $12"
-            fee="$9.00"
-            quantity={delivery.nextDay.qty}
-            subtotal={delivery.nextDay.qty * delivery.nextDay.rate}
-            onChange={(val) => updateQuantity('delivery', 'nextDay', val)}
-          />
-          <ServiceRow
-            label="Large item delivery"
-            feeRange="$55 – $120"
-            fee="$87.50"
-            quantity={delivery.largeItem.qty}
-            subtotal={delivery.largeItem.qty * delivery.largeItem.rate}
-            onChange={(val) => updateQuantity('delivery', 'largeItem', val)}
-          />
-          <ServiceRow
-            label="Per-mile rate"
-            feeRange="$1.50 – $2.20"
-            fee="$1.85"
-            quantity={delivery.perMile.qty}
-            subtotal={delivery.perMile.qty * delivery.perMile.rate}
-            onChange={(val) => updateQuantity('delivery', 'perMile', val)}
-          />
+        
         </Section>
         </div>
 
@@ -538,4 +505,5 @@ function ServiceRow({ label, feeRange, fee, quantity, subtotal, onChange }) {
       </div>
     </div>
   );
+
 }
