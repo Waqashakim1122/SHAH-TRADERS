@@ -80,11 +80,11 @@ export default function ContactUs() {
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl flex items-center justify-center border border-orange-400/30 mb-4 group-hover:scale-110 transition-transform">
                   <MapPin className="w-6 h-6 text-orange-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Headquarters</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Location</h3>
                 <p className="text-slate-400 text-sm leading-relaxed font-light">
-                  123 Logistics Way<br />
-                  Suite 100<br />
-                  Chicago, IL 60607
+                  1213 Texas Ave  <br />
+                 Cincinnati<br />
+                  Ohio,45205
                 </p>
               </div>
 
@@ -94,11 +94,11 @@ export default function ContactUs() {
                   <Phone className="w-6 h-6 text-purple-400" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Call Us</h3>
-                <a href="tel:+15551234567" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">
-                  Sales: (555) 123-4567
+                <a href="tel:+17865941795" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">
+                  Phone: +17865941795
                 </a>
-                <a href="tel:+15551234568" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block mt-1 font-light">
-                  Support: (555) 123-4568
+                <a href="tel:+17865941795" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block mt-1 font-light">
+                  Whatsapp:+17865941795
                 </a>
               </div>
 
@@ -108,12 +108,10 @@ export default function ContactUs() {
                   <Mail className="w-6 h-6 text-pink-400" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Email</h3>
-                <a href="mailto:sales@3plcenter.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">
-                  sales@3plcenter.com
+                <a href="mailto:info@shahtraders.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">
+                  info@shahtraders.com
                 </a>
-                <a href="mailto:support@3plcenter.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block mt-1 font-light">
-                  support@3plcenter.com
-                </a>
+                
               </div>
 
               {/* Hours */}
@@ -123,26 +121,14 @@ export default function ContactUs() {
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Hours</h3>
                 <p className="text-slate-400 text-sm font-light">
-                  Mon-Fri: 8:00 AM - 6:00 PM CST<br />
+                  Mon-Fri: 8:00 AM - 6:00 PM LocalTime<br />
                   Sat-Sun: Closed
                 </p>
               </div>
             </div>
 
-            {/* Global Presence */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 shadow-lg">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center border border-green-400/30 flex-shrink-0">
-                  <Globe className="w-6 h-6 text-green-400" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Global Network</h3>
-                  <p className="text-slate-400 text-sm font-light">
-                    Operating in 15+ countries with 25+ warehouse locations worldwide.
-                  </p>
-                </div>
-              </div>
-            </div>
+           
+            
           </motion.div>
 
           {/* Right Column - Contact Form */}
@@ -304,7 +290,7 @@ export default function ContactUs() {
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 shadow-lg">
             <div className="flex items-center gap-3 mb-4">
               <Building2 className="w-5 h-5 text-cyan-400" />
-              <h3 className="text-lg font-bold text-white">Our Headquarters</h3>
+              <h3 className="text-lg font-bold text-white">Our Location</h3>
             </div>
             <div className="aspect-[21/9] w-full bg-gray-800/50 rounded-2xl flex items-center justify-center border border-white/5 overflow-hidden">
               {/* Replace with actual Google Maps iframe */}
@@ -322,4 +308,5 @@ export default function ContactUs() {
           The bg-clip-text utility is already handled natively by Tailwind, so no custom CSS is needed. */}
     </section>
   );
+
 }
