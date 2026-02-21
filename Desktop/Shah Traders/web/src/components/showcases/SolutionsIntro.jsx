@@ -25,7 +25,7 @@ export default function SolutionsIntro() {
 
           {/* Title - Clean & Dynamic */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
-            Comprehensive logistics
+            Comprehensive 3PL
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-600">
               solutions
@@ -36,7 +36,7 @@ export default function SolutionsIntro() {
           {/* Subtitle - Refined with separators */}
           <p className="text-base md:text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
             Fast fulfillment <span className="text-cyan-800 mx-2">•</span> 
-            Real-time tracking <span className="text-cyan-800 mx-2">•</span> 
+            Packing & Labeling <span className="text-cyan-800 mx-2">•</span> 
             Smart warehousing
           </p>
         </motion.div>

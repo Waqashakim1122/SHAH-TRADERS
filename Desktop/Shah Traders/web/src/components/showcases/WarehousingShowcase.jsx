@@ -33,7 +33,7 @@ export default function WarehousingShowcase() {
             </div>
 
             <ul className="space-y-3 sm:space-y-4">
-              {["Scalable storage options", "Multiple warehouse locations", "24/7 security monitoring", "Advanced reporting", "Real-time pallet visibility"].map((bullet, i) => (
+              {["Scalable storage options", " OHIO US Warehouse ", "24/7 security monitoring", "Advanced reporting", "Safe and Sacure"].map((bullet, i) => (
                 <li key={i} className="flex items-start gap-3 text-gray-200 text-sm sm:text-base md:text-lg">
                   <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-cyan-400 mt-1 flex-shrink-0" />
                   {bullet}
@@ -41,7 +41,7 @@ export default function WarehousingShowcase() {
               ))}
             </ul>
 
-            <a href="#" className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors">
+            <a href="./solutions/ware-housing" className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors">
               Learn more
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -87,4 +87,5 @@ function VideoOnlyCard({ videoSrc }) {
       </video>
     </motion.div>
   );
+
 }

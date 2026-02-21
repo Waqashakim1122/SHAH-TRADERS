@@ -28,13 +28,6 @@ export default function PricingCalculator() {
     palletBuild: { qty: 0, rate: 20 },
   });
 
-  const [delivery, setDelivery] = useState({
-    sameDay: { qty: 0, rate: 14 },
-    nextDay: { qty: 0, rate: 9 },
-    largeItem: { qty: 0, rate: 87.5 },
-    perMile: { qty: 0, rate: 1.85 },
-  });
-
   // Sticky scroll effect - show bottom bar from warehousing, stop at delivery end
   useEffect(() => {
     const handleScroll = () => {
@@ -75,12 +68,6 @@ export default function PricingCalculator() {
           [field]: { ...prev[field], qty }
         }));
         break;
-      case 'delivery':
-        setDelivery(prev => ({
-          ...prev,
-          [field]: { ...prev[field], qty }
-        }));
-        break;
     }
   };
 
@@ -91,8 +78,7 @@ export default function PricingCalculator() {
   const warehousingTotal = calculateSubtotal(warehousing);
   const pickPackTotal = calculateSubtotal(pickPack);
   const fbaPrepTotal = calculateSubtotal(fbaPrep);
-  const deliveryTotal = calculateSubtotal(delivery);
-  const grandTotal = warehousingTotal + pickPackTotal + fbaPrepTotal + deliveryTotal;
+  const grandTotal = warehousingTotal + pickPackTotal + fbaPrepTotal;
 
   return (
     <section id="quote" className="relative min-h-screen bg-black py-20 md:py-32 overflow-hidden">
@@ -117,7 +103,7 @@ export default function PricingCalculator() {
               Quote <span className="bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">Calculator</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl">
-              Get an instant estimate for your logistics needs with transparent pricing
+              Get an instant estimate for your 3PL needs with transparent pricing
             </p>
           </div>
           
@@ -206,7 +192,8 @@ export default function PricingCalculator() {
         </Section>
 
         {/* Amazon FBA Prep */}
-        <Section title="Amazon FBA Prep" icon={Calculator}>
+        <div ref={deliveryRef}>
+          <Section title="Amazon FBA Prep" icon={Calculator}>
           <ServiceRow
             label="FNSKU labeling"
             feeRange="$0.20 – $0.40"
@@ -238,43 +225,6 @@ export default function PricingCalculator() {
             quantity={fbaPrep.palletBuild.qty}
             subtotal={fbaPrep.palletBuild.qty * fbaPrep.palletBuild.rate}
             onChange={(val) => updateQuantity('fbaPrep', 'palletBuild', val)}
-          />
-        </Section>
-
-        {/* Local Delivery (Ohio) */}
-        <div ref={deliveryRef}>
-          <Section title="Local Delivery (Ohio)" icon={Calculator}>
-          <ServiceRow
-            label="Same-day delivery"
-            feeRange="$10 – $18"
-            fee="$14.00"
-            quantity={delivery.sameDay.qty}
-            subtotal={delivery.sameDay.qty * delivery.sameDay.rate}
-            onChange={(val) => updateQuantity('delivery', 'sameDay', val)}
-          />
-          <ServiceRow
-            label="Next-day delivery"
-            feeRange="$6 – $12"
-            fee="$9.00"
-            quantity={delivery.nextDay.qty}
-            subtotal={delivery.nextDay.qty * delivery.nextDay.rate}
-            onChange={(val) => updateQuantity('delivery', 'nextDay', val)}
-          />
-          <ServiceRow
-            label="Large item delivery"
-            feeRange="$55 – $120"
-            fee="$87.50"
-            quantity={delivery.largeItem.qty}
-            subtotal={delivery.largeItem.qty * delivery.largeItem.rate}
-            onChange={(val) => updateQuantity('delivery', 'largeItem', val)}
-          />
-          <ServiceRow
-            label="Per-mile rate"
-            feeRange="$1.50 – $2.20"
-            fee="$1.85"
-            quantity={delivery.perMile.qty}
-            subtotal={delivery.perMile.qty * delivery.perMile.rate}
-            onChange={(val) => updateQuantity('delivery', 'perMile', val)}
           />
         </Section>
         </div>
@@ -319,7 +269,7 @@ export default function PricingCalculator() {
 
           {/* Breakdown */}
           {grandTotal > 0 && (
-            <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 lg:grid-cols-3 gap-4">
               {warehousingTotal > 0 && (
                 <div className="bg-black/20 backdrop-blur-sm border border-white/5 rounded-xl p-4 hover:border-cyan-400/30 transition-all">
                   <div className="text-xs text-gray-500 mb-1 uppercase tracking-wider">Warehousing</div>
@@ -336,12 +286,6 @@ export default function PricingCalculator() {
                 <div className="bg-black/20 backdrop-blur-sm border border-white/5 rounded-xl p-4 hover:border-cyan-400/30 transition-all">
                   <div className="text-xs text-gray-500 mb-1 uppercase tracking-wider">FBA Prep</div>
                   <div className="text-xl font-bold text-white">${fbaPrepTotal.toFixed(2)}</div>
-                </div>
-              )}
-              {deliveryTotal > 0 && (
-                <div className="bg-black/20 backdrop-blur-sm border border-white/5 rounded-xl p-4 hover:border-cyan-400/30 transition-all">
-                  <div className="text-xs text-gray-500 mb-1 uppercase tracking-wider">Delivery</div>
-                  <div className="text-xl font-bold text-white">${deliveryTotal.toFixed(2)}</div>
                 </div>
               )}
             </div>
@@ -396,12 +340,6 @@ export default function PricingCalculator() {
                       <div className="bg-black/40 border border-cyan-400/20 rounded-full px-3 py-1.5">
                         <span className="text-xs text-gray-400">FBA: </span>
                         <span className="text-sm font-bold text-white">${fbaPrepTotal.toFixed(2)}</span>
-                      </div>
-                    )}
-                    {deliveryTotal > 0 && (
-                      <div className="bg-black/40 border border-cyan-400/20 rounded-full px-3 py-1.5">
-                        <span className="text-xs text-gray-400">Delivery: </span>
-                        <span className="text-sm font-bold text-white">${deliveryTotal.toFixed(2)}</span>
                       </div>
                     )}
                   </div>

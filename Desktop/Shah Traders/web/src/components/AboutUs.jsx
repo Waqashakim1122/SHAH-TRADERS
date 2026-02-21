@@ -29,19 +29,17 @@ export default function AboutUs() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
               This is{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-600">
-                3PL Center
+              Shah Traders
               </span>
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At 3PL Center, logistics isn't just what we do—it's in our DNA. As a family-owned
-              company with three generations of logistics expertise, we've grown into a trusted
-              partner for businesses across the U.S. Our full-service solutions cover every
-              aspect of the supply chain, from drayage and fulfillment to advanced technology
-              integrations.
+              At the heart of Shah Traders is a legacy of logistics excellence spanning three generations. 
+              Built on the foundation of personal connections and innovative solutions, our company reflects a hands-on leadership approach and a deep commitment to helping businesses succeed. 
+              We believe in finding smarter ways to solve logistical challenges, ensuring every client receives tailored solutions that drive their success forward.
             </p>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
               We focus on what matters most to our clients: reliable operations, clear
-              communication, and measurable savings. With our proprietary software and
+              communication, and measurable savings. With our proprietary 
               industry expertise, we provide transparency and efficiency at every step, helping
               businesses save time and money while avoiding costly mistakes.
             </p>
@@ -106,15 +104,14 @@ export default function AboutUs() {
               we are
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At the heart of 3PL Center is our visionary founder and CEO, Marcos
-              Eddi. With logistics running through his family for three generations,
-              Marcos has built a company that values personal connections and
+              At the heart of Shah Traders is our visionary founder and CEO, Faisal Naseer. With logistics running through his family for three generations,
+              Faisal Naseer has built a company that values personal connections and
               innovative solutions. His hands-on leadership reflects a deep
               commitment to helping businesses succeed and finding smarter ways to
               solve logistical challenges.
             </p>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At 3PL Center, we're more than just a logistics provider—we're a family
+              At Shah Traders, we're more than just a logistics provider—we're a family
               dedicated to your success. We've built our reputation on reliability,
               transparency, and personal relationships with our clients. Every
               shipment, every call, and every detail is handled with care by our expert

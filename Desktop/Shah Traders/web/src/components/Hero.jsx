@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Search, ChevronDown } from 'lucide-react';
 
 import hero1 from '../assets/Hero/image1.jpg';
 import hero2 from '../assets/Hero/image2.jpg';
@@ -10,7 +9,6 @@ const backgrounds = [hero1, hero2, hero3, hero4];
 
 export default function Hero() {
   const [currentBg, setCurrentBg] = useState(0);
-  const [trackingId, setTrackingId] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,13 +18,6 @@ export default function Hero() {
   }, []);
 
   const goToSlide = (index) => setCurrentBg(index);
-
-  const handleTrack = (e) => {
-    e.preventDefault();
-    if (trackingId.trim()) {
-      console.log('Tracking:', trackingId);
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -49,21 +40,21 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 text-center py-16 sm:py-20 md:py-0">
-        {/* Reduced Headline Size */}
+        {/* Headline */}
         <h1 className="
           text-3xl sm:text-4xl md:text-5xl lg:text-6xl
           font-display font-bold leading-tight mb-4 sm:mb-6 
           tracking-tight text-white animate-fade-in
           drop-shadow-2xl px-2
         ">
-          Delivering Excellence
+          End-to-End Fulfillment
           <br />
           <span className="inline-block mt-1 sm:mt-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
-            Across Every Mile
+            Built for Scale
           </span>
         </h1>
 
-        {/* Reduced Paragraph Size */}
+        {/* Professional Description */}
         <p className="
           text-sm sm:text-base md:text-lg
           text-gray-200 mb-8 sm:mb-10 
@@ -71,52 +62,8 @@ export default function Hero() {
           font-normal leading-relaxed animate-fade-in delay-200
           drop-shadow-lg px-4
         ">
-          From dock to doorstep, we orchestrate seamless logistics solutions that keep your business moving forward. Speed, reliability, and transparency in every shipment.
+          Transform your supply chain with our comprehensive 3PL solutions. From precision warehousing and custom packaging to same-day fulfillment, we deliver the operational excellence your business demands—backed by real-time visibility at every touchpoint.
         </p>
-
-        {/* Tracking Input */}
-        <div className="max-w-xs sm:max-w-md lg:max-w-lg mx-auto animate-fade-in delay-300 mb-12 sm:mb-16 px-4">
-          <form onSubmit={handleTrack}>
-            <div className="
-              relative flex items-center bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden 
-              shadow-2xl border border-white/20 hover:border-cyan-400/50 transition-all duration-300
-            ">
-              <div className="absolute left-3 xs:left-4 sm:left-5 text-cyan-400 pointer-events-none">
-                <Search size={18} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
-              </div>
-
-              <input
-                type="text"
-                value={trackingId}
-                onChange={(e) => setTrackingId(e.target.value)}
-                placeholder="Enter tracking number"
-                className="
-                  w-full bg-transparent border-none text-white 
-                  placeholder-gray-300 text-sm sm:text-base 
-                  pl-10 sm:pl-14 pr-24 sm:pr-36 
-                  py-3 sm:py-4 
-                  focus:outline-none
-                "
-              />
-
-              <button 
-                type="submit"
-                className="
-                  absolute right-1 sm:right-2 
-                  px-4 sm:px-8 py-2 sm:py-3 
-                  rounded-2xl font-semibold text-xs sm:text-sm
-                  bg-gradient-to-r from-cyan-500 to-blue-600
-                  hover:from-cyan-400 hover:to-blue-500
-                  transition-all duration-300 shadow-glow-cyan
-                  active:scale-95
-                  whitespace-nowrap
-                "
-              >
-                Track
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
 
       {/* Carousel Dots */}
@@ -136,7 +83,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .shadow-glow-cyan { box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); }
         .animate-fade-in { animation: fadeInUp 1.2s ease-out forwards; opacity: 0; }
         @keyframes fadeInUp {

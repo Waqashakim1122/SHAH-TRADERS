@@ -1,5 +1,5 @@
 import React from 'react';
-import { DotLottie } from '@lottiefiles/dotlottie-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -12,18 +12,18 @@ export default function AnimationSection() {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-8 text-center lg:text-left"
           >
             {/* Section Label */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center lg:justify-start gap-3">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-cyan-400" />
               <span className="text-cyan-400 text-xs font-bold uppercase tracking-[0.4em]">
                 Innovation
@@ -39,13 +39,13 @@ export default function AnimationSection() {
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl font-light">
-              We leverage modern technology to ensure our digital 
-              platforms are as fast and efficient as our logistics services. 
+            <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl font-light mx-auto lg:mx-0">
+              We leverage modern technology to ensure our digital
+              platforms are as fast and efficient.
               Seamless integration for a faster world.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex justify-center lg:justify-start pt-2">
               <button className="
                 px-8 py-4 rounded-2xl font-semibold text-white
                 bg-gradient-to-r from-cyan-500 to-blue-600
@@ -54,6 +54,7 @@ export default function AnimationSection() {
                 hover:scale-105
                 transition-all duration-300
                 flex items-center justify-center gap-2
+                w-full sm:w-auto
               ">
                 Track Shipment
                 <ArrowRight className="w-5 h-5" />
@@ -70,12 +71,12 @@ export default function AnimationSection() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="
                 rounded-3xl
-                overflow-hidden 
+                overflow-hidden
                 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)]
                 bg-white
                 aspect-[3/2.2]
-                w-full 
-                max-w-2xl
+                w-full
+                max-w-lg
                 mx-auto
                 relative
                 flex items-center justify-center
@@ -83,9 +84,9 @@ export default function AnimationSection() {
             >
               {/* Subtle internal glow */}
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-50/50 to-transparent pointer-events-none" />
-              
+
               <div className="relative w-full h-full p-4 sm:p-8">
-                <DotLottie
+                <DotLottieReact
                   src="/Animation/ready, set, go!.lottie"
                   autoplay
                   loop
@@ -97,6 +98,13 @@ export default function AnimationSection() {
 
         </div>
       </div>
+
+      <style jsx>{`
+        .bg-clip-text {
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+      `}</style>
     </section>
   );
 }
