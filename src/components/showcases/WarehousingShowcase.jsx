@@ -33,7 +33,7 @@ export default function WarehousingShowcase() {
             </div>
 
             <ul className="space-y-3 sm:space-y-4">
-              {["Scalable storage options", "Cincinnati ohio us Warehouse ", "24/7 security monitoring", "Advanced reporting", "Safe and Sacure"].map((bullet, i) => (
+              {["Scalable storage options", " OHIO US Warehouse ", "24/7 security monitoring", "Advanced reporting", "Safe and Sacure"].map((bullet, i) => (
                 <li key={i} className="flex items-start gap-3 text-gray-200 text-sm sm:text-base md:text-lg">
                   <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-cyan-400 mt-1 flex-shrink-0" />
                   {bullet}
@@ -89,3 +89,4 @@ function VideoOnlyCard({ videoSrc }) {
   );
 
 }
+
