@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
 
 import hero1 from '../assets/Hero/image1.jpg';
 import hero2 from '../assets/Hero/image2.jpg';
@@ -10,7 +9,6 @@ const backgrounds = [hero1, hero2, hero3, hero4];
 
 export default function Hero() {
   const [currentBg, setCurrentBg] = useState(0);
-  const [trackingId, setTrackingId] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,13 +18,6 @@ export default function Hero() {
   }, []);
 
   const goToSlide = (index) => setCurrentBg(index);
-
-  const handleTrack = (e) => {
-    e.preventDefault();
-    if (trackingId.trim()) {
-      console.log('Tracking:', trackingId);
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -73,50 +64,6 @@ export default function Hero() {
         ">
           Transform your supply chain with our comprehensive 3PL solutions. From precision warehousing and custom packaging to same-day fulfillment, we deliver the operational excellence your business demands—backed by real-time visibility at every touchpoint.
         </p>
-
-        {/* Tracking Input */}
-        <div className="max-w-xs sm:max-w-md lg:max-w-lg mx-auto animate-fade-in delay-300 mb-12 sm:mb-16 px-4">
-          <form onSubmit={handleTrack}>
-            <div className="
-              relative flex items-center bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden 
-              shadow-2xl border border-white/20 hover:border-cyan-400/50 transition-all duration-300
-            ">
-              <div className="absolute left-3 xs:left-4 sm:left-5 text-cyan-400 pointer-events-none">
-                <Search size={18} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
-              </div>
-
-              <input
-                type="text"
-                value={trackingId}
-                onChange={(e) => setTrackingId(e.target.value)}
-                placeholder="Enter tracking number"
-                className="
-                  w-full bg-transparent border-none text-white 
-                  placeholder-gray-300 text-sm sm:text-base 
-                  pl-10 sm:pl-14 pr-24 sm:pr-36 
-                  py-3 sm:py-4 
-                  focus:outline-none
-                "
-              />
-
-              <button 
-                type="submit"
-                className="
-                  absolute right-1 sm:right-2 
-                  px-4 sm:px-8 py-2 sm:py-3 
-                  rounded-2xl font-semibold text-xs sm:text-sm
-                  bg-gradient-to-r from-cyan-500 to-blue-600
-                  hover:from-cyan-400 hover:to-blue-500
-                  transition-all duration-300 shadow-glow-cyan
-                  active:scale-95
-                  whitespace-nowrap
-                "
-              >
-                Track
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
 
       {/* Carousel Dots */}
