@@ -83,8 +83,7 @@ export default function ContactUs() {
                 <h3 className="text-lg font-bold text-white mb-2">Location</h3>
                 <p className="text-slate-400 text-sm leading-relaxed font-light">
                   1213 Texas Ave  <br />
-                 Cincinnati<br />
-                  Ohio,45205
+                  Ohio
                 </p>
               </div>
 
@@ -297,7 +296,7 @@ export default function ContactUs() {
               <div className="text-center">
                 <MapPin className="w-8 h-8 text-cyan-400/50 mx-auto mb-2" />
                 <p className="text-slate-500 font-light">Interactive map will be embedded here</p>
-                <p className="text-slate-600 text-sm mt-1 font-light">123 Logistics Way, Chicago, IL 60607</p>
+                <p className="text-slate-600 text-sm mt-1 font-light">1213 Texas Ave,Cincinnati,Ohio 45205</p>
               </div>
             </div>
           </div>
@@ -310,4 +309,3 @@ export default function ContactUs() {
   );
 
 }
-
