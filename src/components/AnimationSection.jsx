@@ -41,7 +41,7 @@ export default function AnimationSection() {
 
             <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl font-light mx-auto lg:mx-0">
               We leverage modern technology to ensure our digital
-              platforms are as fast and efficient as our logistics services.
+              platforms are as fast and efficient.
               Seamless integration for a faster world.
             </p>
 
@@ -108,3 +108,4 @@ export default function AnimationSection() {
     </section>
   );
 }
+
