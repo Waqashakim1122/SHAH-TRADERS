@@ -18,6 +18,9 @@ import FulfillmentPage from './pages/FulfillmentPage';
 import PackingLabelingPage from './pages/PackingLabelingPage';
 import WarehousingPage from './pages/WarehousingPage';
 import PricingSection from './components/PricingSection';
+import EcommerceFulfillmentDetailPage from './pages/EcommerceFulfillmentDetailPage';
+import WarehousingDetailPage from './pages/WarehousingDetailPage';
+import PackingLabelingDetailPage from './pages/PackingLabelingDetailPage';
 // Remove these if they don't exist yet:
 // import ColdChainPage from './pages/ColdChainPage';
 // import ProcessPage from './pages/ProcessPage';
@@ -42,6 +45,10 @@ export default function App() {
           <Route path="/solutions/fulfillment" element={<FulfillmentPage />} />
           <Route path="/solutions/PackingLabeling" element={<PackingLabelingPage />} />
           <Route path="/solutions/warehousing" element={<WarehousingPage />} />
+          // In your routes:
+<Route path="/solutions/ecommerce-fulfillment" element={<EcommerceFulfillmentDetailPage />} />
+<Route path="/solutions/ware-housing" element={<WarehousingDetailPage />} />
+<Route path="/solutions/packing-labeling" element={<PackingLabelingDetailPage />} />
           
           {/* Comment out routes for pages you haven't created yet */}
           {/* <Route path="/network" element={<GlobalNetwork />} /> */}
