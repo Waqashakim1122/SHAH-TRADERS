@@ -41,7 +41,7 @@ export default function ContactUs() {
             </span>
           </h1>
           <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-light">
-            We're here to help with any questions about our logistics solutions.
+            We're here to help with any questions about our 3PL solutions.
           </p>
         </motion.div>
 
@@ -310,3 +310,4 @@ export default function ContactUs() {
   );
 
 }
+
