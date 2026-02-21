@@ -103,7 +103,7 @@ export default function PricingCalculator() {
               Quote <span className="bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">Calculator</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl">
-              Get an instant estimate for your logistics needs with transparent pricing
+              Get an instant estimate for your 3PL needs with transparent pricing
             </p>
           </div>
           
@@ -477,3 +477,4 @@ function ServiceRow({ label, feeRange, fee, quantity, subtotal, onChange }) {
     </div>
   );
 }
+
