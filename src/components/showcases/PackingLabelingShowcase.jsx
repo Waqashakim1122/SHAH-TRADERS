@@ -94,4 +94,3 @@ function VideoOnlyCard({ videoSrc }) {
     </motion.div>
   );
 }
-
