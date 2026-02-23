@@ -30,15 +30,17 @@ export default function WarehousingDetailPage() {
         </div>
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs sm:text-sm font-medium tracking-widest uppercase mb-6">
-              Solutions
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-              Secure{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
-                Warehousing
-              </span>
-            </h1>
+           <div className="inline-flex items-center gap-2 mb-4">
+  <span className="h-px w-8 bg-gradient-to-r from-transparent to-cyan-400" />
+  <span className="text-cyan-400 text-xs font-bold uppercase tracking-[0.4em]">Solutions</span>
+  <span className="h-px w-8 bg-gradient-to-l from-transparent to-cyan-400" />
+</div>
+<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-wide">
+  Secure{' '}
+  <span className="bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
+    Warehousing
+  </span>
+</h1>
             <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
               Flexible, secure storage built for businesses that demand visibility and control. Scale your inventory without the overhead.
             </p>
@@ -160,4 +162,5 @@ export default function WarehousingDetailPage() {
       </section>
     </div>
   );
+
 }
