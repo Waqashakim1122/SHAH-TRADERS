@@ -22,7 +22,8 @@ const EMAILJS_TEMPLATE_ID = 'template_p1i266b';
 const EMAILJS_PUBLIC_KEY  = 'PFg3iKU7VtDcyjEWG';
 
 // ✅ Calendly Link - Replace with your actual Calendly URL
-const CALENDLY_URL = 'https://calendly.com/shahtraders';
+const CALENDLY_URL = 'const CALENDLY_URL = 'https://calendly.com/naturesaura-net/30min';
+';
 
 export default function GetQuote() {
   const navigate = useNavigate();
@@ -315,3 +316,4 @@ export default function GetQuote() {
     </section>
   );
 }
+
