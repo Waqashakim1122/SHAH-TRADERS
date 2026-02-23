@@ -143,7 +143,7 @@ export default function ContactUs() {
                   <MapPin className="w-6 h-6 text-orange-400" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Location</h3>
-                <p className="text-slate-400 text-sm leading-relaxed font-light">1213 Texas Ave<br />Ohio</p>
+                <p className="text-slate-400 text-sm leading-relaxed font-light">Ohio<br />us</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-cyan-400/30 transition-all duration-300 shadow-lg group">
@@ -160,7 +160,7 @@ export default function ContactUs() {
                   <Mail className="w-6 h-6 text-pink-400" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Email</h3>
-                <a href="mailto:info@shahtraders.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">info@shahtraders.com</a>
+                <a href="mailto:info@shahtradrs.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">info@shahtradrs.com</a>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-cyan-400/30 transition-all duration-300 shadow-lg group">
@@ -349,3 +349,4 @@ export default function ContactUs() {
     </section>
   );
 }
+
