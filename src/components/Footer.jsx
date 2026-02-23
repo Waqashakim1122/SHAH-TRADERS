@@ -42,7 +42,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed font-light">
-              Delivering excellence across every mile with three generations of logistics expertise.
+              Delivering excellence across every mile with three generations of businesses expertise.
             </p>
             
             {/* Scroll to Top Button */}
@@ -250,6 +250,7 @@ export default function Footer() {
   );
 
 }
+
 
 
 
