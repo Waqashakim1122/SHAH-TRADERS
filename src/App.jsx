@@ -22,6 +22,8 @@ import PricingSection from './components/PricingSection';
 import EcommerceFulfillmentDetailPage from './pages/EcommerceFulfillmentDetailPage';
 import WarehousingDetailPage from './pages/WarehousingDetailPage';
 import PackingLabelingDetailPage from './pages/PackingLabelingDetailPage';
+import NotFoundPage from './pages/NotFoundPage';
+
 
 export default function App() {
   const [activeModal, setActiveModal] = useState(null);
@@ -45,6 +47,7 @@ export default function App() {
           <Route path="/solutions/ecommerce-fulfillment" element={<EcommerceFulfillmentDetailPage />} />
           <Route path="/solutions/ware-housing" element={<WarehousingDetailPage />} />
           <Route path="/solutions/packing-labeling" element={<PackingLabelingDetailPage />} />
+            <Route path="*" element={<NotFoundPage />} /> 
         </Routes>
 
         <Footer />
