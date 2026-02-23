@@ -131,8 +131,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 mb-1 font-light">EMAIL</p>
-                  <a href="mailto:quotes@3plcenter.com" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm">
-                    info@shahtraders.com
+                  <a href="info@shahtradrs.com" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm">
+                    info@shahtradrs.com
                   </a>
                 </div>
               </li>
@@ -143,7 +143,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-slate-500 mb-1 font-light">HQ</p>
                   <p className="text-slate-300 text-sm font-light">
-                   1213 Texas Ave<br />Cincinnati Ohio,45205
+                   Ohio<br />us
                   </p>
                 </div>
               </li>
@@ -250,5 +250,6 @@ export default function Footer() {
   );
 
 }
+
 
 
