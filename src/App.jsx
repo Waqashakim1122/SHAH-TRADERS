@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ServiceModal from './components/ServiceModal';
+import ScrollToTop from './components/ScrollToTop';
+
 
 // Page Components
 import HomePage from './pages/HomePage';
@@ -27,6 +29,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="bg-[#020617] text-light min-vh-100">
+         <ScrollToTop /> 
         <Navbar />
         
         <Routes>
