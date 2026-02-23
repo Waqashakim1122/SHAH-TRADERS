@@ -24,10 +24,9 @@ export default function ContactUs() {
     consent: false,
   });
 
-  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [status, setStatus] = useState('idle');
   const [errors, setErrors] = useState({});
 
-  // ── Validation ──────────────────────────────────────────────
   const validate = () => {
     const e = {};
     if (!formData.from_name.trim())  e.from_name  = 'Full name is required';
@@ -44,7 +43,6 @@ export default function ContactUs() {
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  // ── Submit ───────────────────────────────────────────────────
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
@@ -82,7 +80,6 @@ export default function ContactUs() {
 
   return (
     <section className="relative bg-[#020617] min-h-screen py-20 md:py-32 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-64 h-64 md:w-96 md:h-96 bg-cyan-600/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-blue-600/5 rounded-full blur-3xl" />
@@ -113,13 +110,12 @@ export default function ContactUs() {
         {/* Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
 
-          {/* ── Left: Contact Info ── */}
+          {/* Left: Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            {/* Trust Badge */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 shadow-lg">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 rounded-2xl flex items-center justify-center border border-cyan-400/30">
@@ -136,14 +132,13 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-cyan-400/30 transition-all duration-300 shadow-lg group">
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl flex items-center justify-center border border-orange-400/30 mb-4 group-hover:scale-110 transition-transform">
                   <MapPin className="w-6 h-6 text-orange-400" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Location</h3>
-                <p className="text-slate-400 text-sm leading-relaxed font-light">Ohio<br />us</p>
+                <p className="text-slate-400 text-sm leading-relaxed font-light">Ohio, US</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-cyan-400/30 transition-all duration-300 shadow-lg group">
@@ -160,7 +155,7 @@ export default function ContactUs() {
                   <Mail className="w-6 h-6 text-pink-400" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Email</h3>
-                <a href="mailto:info@shahtradrs.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">info@shahtradrs.com</a>
+                <a href="mailto:info@shahtraders.com" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm block font-light">info@shahtraders.com</a>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-cyan-400/30 transition-all duration-300 shadow-lg group">
@@ -173,7 +168,7 @@ export default function ContactUs() {
             </div>
           </motion.div>
 
-          {/* ── Right: Form ── */}
+          {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.8 }}
@@ -181,7 +176,6 @@ export default function ContactUs() {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-10 shadow-lg">
               <h2 className="text-2xl font-bold text-white mb-6">Send us a message</h2>
 
-              {/* ✅ SUCCESS STATE */}
               {status === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
@@ -201,11 +195,9 @@ export default function ContactUs() {
                 </motion.div>
               )}
 
-              {/* ✅ FORM STATE */}
               {status !== 'success' && (
                 <form ref={formRef} className="space-y-5" onSubmit={handleSubmit} noValidate>
 
-                  {/* Error Banner */}
                   {status === 'error' && (
                     <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/30 rounded-2xl">
                       <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
@@ -213,7 +205,6 @@ export default function ContactUs() {
                     </div>
                   )}
 
-                  {/* Name + Company */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-slate-400 text-sm mb-2 font-light">Full name *</label>
@@ -234,7 +225,6 @@ export default function ContactUs() {
                     </div>
                   </div>
 
-                  {/* Email + Phone */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-slate-400 text-sm mb-2 font-light">Email *</label>
@@ -255,7 +245,6 @@ export default function ContactUs() {
                     </div>
                   </div>
 
-                  {/* Subject */}
                   <div>
                     <label className="block text-slate-400 text-sm mb-2 font-light">Subject</label>
                     <select
@@ -270,7 +259,6 @@ export default function ContactUs() {
                     </select>
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label className="block text-slate-400 text-sm mb-2 font-light">Message *</label>
                     <textarea
@@ -281,7 +269,6 @@ export default function ContactUs() {
                     {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
                   </div>
 
-                  {/* Consent */}
                   <div>
                     <div className="flex items-start gap-3">
                       <input
@@ -297,7 +284,6 @@ export default function ContactUs() {
                     {errors.consent && <p className="text-red-400 text-xs mt-1 ml-7">{errors.consent}</p>}
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={status === 'loading'}
@@ -319,7 +305,7 @@ export default function ContactUs() {
           </motion.div>
         </div>
 
-        {/* Map Section */}
+        {/* ✅ UPDATED: Map showing Ohio, US */}
         <motion.div
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
@@ -328,12 +314,12 @@ export default function ContactUs() {
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 shadow-lg">
             <div className="flex items-center gap-3 mb-4">
               <Building2 className="w-5 h-5 text-cyan-400" />
-              <h3 className="text-lg font-bold text-white">Our Location</h3>
+              <h3 className="text-lg font-bold text-white">Our Location — Ohio, US</h3>
             </div>
             <div className="aspect-[21/9] w-full rounded-2xl overflow-hidden border border-white/5">
               <iframe
-                title="Shah Traders Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.8!2d-84.5901!3d39.1031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1213+Texas+Ave%2C+Cincinnati%2C+OH+45205!5e0!3m2!1sen!2sus!4v1"
+                title="Shah Traders - Ohio US Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1556567.7692593513!2d-84.81996!3d40.367474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b0e1954aab97b%3A0x9140b7ff7e4e8b8f!2sOhio%2C%20USA!5e0!3m2!1sen!2s!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
@@ -349,4 +335,3 @@ export default function ContactUs() {
     </section>
   );
 }
-
