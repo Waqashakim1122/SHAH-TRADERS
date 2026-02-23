@@ -28,7 +28,7 @@ export default function PricingCalculator() {
     palletBuild: { qty: 0, rate: 20 },
   });
 
-  // Sticky scroll effect - show bottom bar from warehousing, stop at delivery end
+  // ✅ UNCHANGED: Sticky scroll effect
   useEffect(() => {
     const handleScroll = () => {
       if (warehousingRef.current && deliveryRef.current) {
@@ -36,14 +36,13 @@ export default function PricingCalculator() {
         const deliveryBottom = deliveryRef.current.getBoundingClientRect().bottom;
         const windowHeight = window.innerHeight;
         
-        // Show when warehousing is in view and before delivery section ends
         const shouldShow = warehousingTop < windowHeight * 0.8 && deliveryBottom > windowHeight;
         setIsSticky(shouldShow);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -82,7 +81,7 @@ export default function PricingCalculator() {
 
   return (
     <section id="quote" className="relative min-h-screen bg-black py-20 md:py-32 overflow-hidden">
-      {/* Background Effects - matching Hero section */}
+      {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -128,39 +127,39 @@ export default function PricingCalculator() {
         {/* Warehousing / Storage */}
         <div ref={warehousingRef}>
           <Section title="Warehousing / Storage" icon={Calculator}>
-          <ServiceRow
-            label="Pallet storage"
-            feeRange="$20 – $35 / pallet / month"
-            fee="$27.50"
-            quantity={warehousing.palletStorage.qty}
-            subtotal={warehousing.palletStorage.qty * warehousing.palletStorage.rate}
-            onChange={(val) => updateQuantity('warehousing', 'palletStorage', val)}
-          />
-          <ServiceRow
-            label="Shelf/bin storage"
-            feeRange="$2 – $8 / month"
-            fee="$5.00"
-            quantity={warehousing.shelfStorage.qty}
-            subtotal={warehousing.shelfStorage.qty * warehousing.shelfStorage.rate}
-            onChange={(val) => updateQuantity('warehousing', 'shelfStorage', val)}
-          />
-          <ServiceRow
-            label="Inbound receiving"
-            feeRange="$10 – $25 per pallet"
-            fee="$17.50"
-            quantity={warehousing.inboundReceiving.qty}
-            subtotal={warehousing.inboundReceiving.qty * warehousing.inboundReceiving.rate}
-            onChange={(val) => updateQuantity('warehousing', 'inboundReceiving', val)}
-          />
-          <ServiceRow
-            label="Floor-loaded container unload"
-            feeRange="$250 – $400"
-            fee="$325.00"
-            quantity={warehousing.containerUnload.qty}
-            subtotal={warehousing.containerUnload.qty * warehousing.containerUnload.rate}
-            onChange={(val) => updateQuantity('warehousing', 'containerUnload', val)}
-          />
-        </Section>
+            <ServiceRow
+              label="Pallet storage"
+              feeRange="$20 – $35 / pallet / month"
+              fee="$27.50"
+              quantity={warehousing.palletStorage.qty}
+              subtotal={warehousing.palletStorage.qty * warehousing.palletStorage.rate}
+              onChange={(val) => updateQuantity('warehousing', 'palletStorage', val)}
+            />
+            <ServiceRow
+              label="Shelf/bin storage"
+              feeRange="$2 – $8 / month"
+              fee="$5.00"
+              quantity={warehousing.shelfStorage.qty}
+              subtotal={warehousing.shelfStorage.qty * warehousing.shelfStorage.rate}
+              onChange={(val) => updateQuantity('warehousing', 'shelfStorage', val)}
+            />
+            <ServiceRow
+              label="Inbound receiving"
+              feeRange="$10 – $25 per pallet"
+              fee="$17.50"
+              quantity={warehousing.inboundReceiving.qty}
+              subtotal={warehousing.inboundReceiving.qty * warehousing.inboundReceiving.rate}
+              onChange={(val) => updateQuantity('warehousing', 'inboundReceiving', val)}
+            />
+            <ServiceRow
+              label="Floor-loaded container unload"
+              feeRange="$250 – $400"
+              fee="$325.00"
+              quantity={warehousing.containerUnload.qty}
+              subtotal={warehousing.containerUnload.qty * warehousing.containerUnload.rate}
+              onChange={(val) => updateQuantity('warehousing', 'containerUnload', val)}
+            />
+          </Section>
         </div>
 
         {/* Pick & Pack */}
@@ -194,57 +193,60 @@ export default function PricingCalculator() {
         {/* Amazon FBA Prep */}
         <div ref={deliveryRef}>
           <Section title="Amazon FBA Prep" icon={Calculator}>
-          <ServiceRow
-            label="FNSKU labeling"
-            feeRange="$0.20 – $0.40"
-            fee="$0.30"
-            quantity={fbaPrep.fnskuLabeling.qty}
-            subtotal={fbaPrep.fnskuLabeling.qty * fbaPrep.fnskuLabeling.rate}
-            onChange={(val) => updateQuantity('fbaPrep', 'fnskuLabeling', val)}
-          />
-          <ServiceRow
-            label="Polybagging"
-            feeRange="$0.25 – $0.60"
-            fee="$0.42"
-            quantity={fbaPrep.polybagging.qty}
-            subtotal={fbaPrep.polybagging.qty * fbaPrep.polybagging.rate}
-            onChange={(val) => updateQuantity('fbaPrep', 'polybagging', val)}
-          />
-          <ServiceRow
-            label="Bubble wrapping"
-            feeRange="$0.40 – $0.80"
-            fee="$0.60"
-            quantity={fbaPrep.bubbleWrapping.qty}
-            subtotal={fbaPrep.bubbleWrapping.qty * fbaPrep.bubbleWrapping.rate}
-            onChange={(val) => updateQuantity('fbaPrep', 'bubbleWrapping', val)}
-          />
-          <ServiceRow
-            label="Pallet build/wrap"
-            feeRange="$15 – $25"
-            fee="$20.00"
-            quantity={fbaPrep.palletBuild.qty}
-            subtotal={fbaPrep.palletBuild.qty * fbaPrep.palletBuild.rate}
-            onChange={(val) => updateQuantity('fbaPrep', 'palletBuild', val)}
-          />
-        </Section>
+            <ServiceRow
+              label="FNSKU labeling"
+              feeRange="$0.20 – $0.40"
+              fee="$0.30"
+              quantity={fbaPrep.fnskuLabeling.qty}
+              subtotal={fbaPrep.fnskuLabeling.qty * fbaPrep.fnskuLabeling.rate}
+              onChange={(val) => updateQuantity('fbaPrep', 'fnskuLabeling', val)}
+            />
+            <ServiceRow
+              label="Polybagging"
+              feeRange="$0.25 – $0.60"
+              fee="$0.42"
+              quantity={fbaPrep.polybagging.qty}
+              subtotal={fbaPrep.polybagging.qty * fbaPrep.polybagging.rate}
+              onChange={(val) => updateQuantity('fbaPrep', 'polybagging', val)}
+            />
+            <ServiceRow
+              label="Bubble wrapping"
+              feeRange="$0.40 – $0.80"
+              fee="$0.60"
+              quantity={fbaPrep.bubbleWrapping.qty}
+              subtotal={fbaPrep.bubbleWrapping.qty * fbaPrep.bubbleWrapping.rate}
+              onChange={(val) => updateQuantity('fbaPrep', 'bubbleWrapping', val)}
+            />
+            <ServiceRow
+              label="Pallet build/wrap"
+              feeRange="$15 – $25"
+              fee="$20.00"
+              quantity={fbaPrep.palletBuild.qty}
+              subtotal={fbaPrep.palletBuild.qty * fbaPrep.palletBuild.rate}
+              onChange={(val) => updateQuantity('fbaPrep', 'palletBuild', val)}
+            />
+          </Section>
         </div>
 
-        {/* Total Section - Normal Position */}
+        {/* ✅ FIXED ONLY THIS: Static Total Section Card - Now Mobile Responsive */}
         <div 
           ref={totalSectionRef}
           className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-10 mt-8 shadow-2xl animate-fade-in delay-300"
         >
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
+          <div className="flex flex-col items-center lg:flex-row lg:items-center justify-between gap-6">
+            
+            {/* Title */}
+            <div className="text-center lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
                 <TrendingUp className="w-5 h-5 text-cyan-400" />
                 <h3 className="text-2xl font-bold text-white">Total estimated cost</h3>
               </div>
               <p className="text-sm text-gray-400">Based on mid-range pricing</p>
             </div>
             
-            <div className="flex items-baseline gap-6">
-              <div className="text-right">
+            {/* Price + Button: stacked on mobile, row on sm+ */}
+            <div className="flex flex-col items-center gap-4 w-full sm:w-auto">
+              <div className="text-center">
                 <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
                   ${grandTotal.toFixed(2)}
                 </div>
@@ -252,13 +254,14 @@ export default function PricingCalculator() {
               </div>
               
               <button className="
+                w-full sm:w-auto
                 px-8 py-4 rounded-full font-semibold text-white
                 bg-gradient-to-r from-cyan-400 to-cyan-600
                 shadow-lg shadow-cyan-500/30
                 hover:shadow-cyan-500/60
                 hover:scale-105
                 transition-all duration-300
-                flex items-center gap-2
+                flex items-center justify-center gap-2
                 active:scale-95
               ">
                 <FileText className="w-5 h-5" />
@@ -301,7 +304,7 @@ export default function PricingCalculator() {
         </div>
       </div>
 
-      {/* Sticky Floating Total Bar - BOTTOM */}
+      {/* ✅ 100% UNCHANGED: Sticky Floating Total Bar - BOTTOM (moving/animated bar) */}
       <div 
         className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${
           isSticky ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
@@ -477,4 +480,3 @@ function ServiceRow({ label, feeRange, fee, quantity, subtotal, onChange }) {
     </div>
   );
 }
-
