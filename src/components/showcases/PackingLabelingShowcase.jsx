@@ -1,6 +1,7 @@
 // src/components/PackingLabelingShowcase.jsx
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
 
 export default function PackingLabelingShowcase() {
   return (
@@ -29,7 +30,10 @@ export default function PackingLabelingShowcase() {
 
             {/* Video on mobile */}
             <div className="lg:hidden my-10">
-              <VideoOnlyCard videoSrc="/videos/packing-labeling-demo.mp4" />
+              <VideoOnlyCard 
+                videoSrc="/videos/packing-labeling-demo.mp4"
+                posterImage="/videos/packing-labeling-poster.jpg"
+              />
             </div>
 
             <ul className="space-y-3 sm:space-y-4">
@@ -55,7 +59,10 @@ export default function PackingLabelingShowcase() {
 
           {/* Video on desktop */}
           <div className="hidden lg:flex lg:justify-center lg:items-center lg:order-1">
-            <VideoOnlyCard videoSrc="/videos/packing-labeling-demo.mp4" />
+            <VideoOnlyCard 
+              videoSrc="/videos/packing-labeling-demo.mp4"
+              posterImage="/images/packing-labeling-poster.jpg"
+            />
           </div>
         </div>
       </div>
@@ -63,7 +70,19 @@ export default function PackingLabelingShowcase() {
   );
 }
 
-function VideoOnlyCard({ videoSrc }) {
+function VideoOnlyCard({ videoSrc, posterImage }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+
+  const handleLoadedData = () => {
+    setIsLoading(false);
+  };
+
+  const handleError = () => {
+    setIsLoading(false);
+    setHasError(true);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -79,14 +98,51 @@ function VideoOnlyCard({ videoSrc }) {
         w-full 
         max-w-3xl
         mx-auto
+        relative
       "
     >
+      {/* Loading State */}
+      {isLoading && !hasError && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 z-10">
+          <div className="relative">
+            {/* Animated spinner */}
+            <div className="w-16 h-16 border-4 border-gray-200 border-t-cyan-500 rounded-full animate-spin"></div>
+            
+            {/* Optional: Pulsing background effect */}
+            <div className="absolute inset-0 w-16 h-16 border-4 border-cyan-400/20 rounded-full animate-ping"></div>
+          </div>
+          <p className="mt-4 text-gray-600 text-sm font-medium">Loading video...</p>
+        </div>
+      )}
+
+      {/* Error State */}
+      {hasError && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 z-10">
+          <div className="text-center px-4">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center">
+              <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p className="text-gray-700 font-medium mb-1">Video unavailable</p>
+            <p className="text-gray-500 text-sm">Please check back later</p>
+          </div>
+        </div>
+      )}
+
+      {/* Video Element */}
       <video
-        className="w-full h-full object-contain bg-white"
+        className={`w-full h-full object-contain bg-white transition-opacity duration-300 ${
+          isLoading ? 'opacity-0' : 'opacity-100'
+        }`}
         autoPlay
         loop
         muted
         playsInline
+        poster={posterImage}
+        onLoadedData={handleLoadedData}
+        onError={handleError}
+        preload="metadata"
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
