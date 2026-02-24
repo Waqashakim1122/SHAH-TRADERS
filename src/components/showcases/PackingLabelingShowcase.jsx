@@ -12,6 +12,7 @@ export default function PackingLabelingShowcase() {
 
       <div className="relative container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+          
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -30,7 +31,7 @@ export default function PackingLabelingShowcase() {
 
             {/* Video on mobile */}
             <div className="lg:hidden my-10">
-              <VideoOnlyCard 
+              <VideoOnlyCard
                 videoSrc="/videos/packing-labeling-demo.mp4"
                 posterImage="/videos/packing-labeling-poster.jpg"
               />
@@ -50,8 +51,11 @@ export default function PackingLabelingShowcase() {
                 </li>
               ))}
             </ul>
-
-            <a href="./solutions/packing-labeling" className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors">
+<a
+            
+              href="./solutions/packing-labeling"
+              className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
+            >
               Learn more
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -59,11 +63,12 @@ export default function PackingLabelingShowcase() {
 
           {/* Video on desktop */}
           <div className="hidden lg:flex lg:justify-center lg:items-center lg:order-1">
-            <VideoOnlyCard 
+            <VideoOnlyCard
               videoSrc="/videos/packing-labeling-demo.mp4"
               posterImage="/images/packing-labeling-poster.jpg"
             />
           </div>
+
         </div>
       </div>
     </section>
@@ -73,9 +78,11 @@ export default function PackingLabelingShowcase() {
 function VideoOnlyCard({ videoSrc, posterImage }) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   const handleLoadedData = () => {
     setIsLoading(false);
+    setTimeout(() => setShowVideo(true), 300);
   };
 
   const handleError = () => {
@@ -91,49 +98,66 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="
         rounded-3xl
-        overflow-hidden 
+        overflow-hidden
         shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)]
         bg-white
         aspect-[3/2.2]
-        w-full 
+        w-full
         max-w-3xl
         mx-auto
         relative
       "
     >
-      {/* Loading State */}
+
+      {/* Poster Image - visible until video is ready */}
+      <div className={`absolute inset-0 transition-opacity duration-500 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <img
+          src={posterImage}
+          alt="Packing and labeling preview"
+          className="w-full h-full object-contain"
+        />
+      </div>
+
+      {/* Three Dots Loading Indicator - Top Right Corner */}
       {isLoading && !hasError && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 z-10">
-          <div className="relative">
-            {/* Animated spinner */}
-            <div className="w-16 h-16 border-4 border-gray-200 border-t-cyan-500 rounded-full animate-spin"></div>
-            
-            {/* Optional: Pulsing background effect */}
-            <div className="absolute inset-0 w-16 h-16 border-4 border-cyan-400/20 rounded-full animate-ping"></div>
-          </div>
-          <p className="mt-4 text-gray-600 text-sm font-medium">Loading video...</p>
+        <div className="absolute top-4 right-4 flex gap-1.5 z-20">
+          <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+          <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+          <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
         </div>
       )}
 
-      {/* Error State */}
+      {/* Small Error Icon - Top Right Corner (same position as dots) */}
       {hasError && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 z-10">
-          <div className="text-center px-4">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center">
-              <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <p className="text-gray-700 font-medium mb-1">Video unavailable</p>
-            <p className="text-gray-500 text-sm">Please check back later</p>
+        <div className="absolute top-4 right-4 z-20 group cursor-pointer">
+          {/* Small red circle icon */}
+          <div className="w-7 h-7 rounded-full bg-red-100 border border-red-300 flex items-center justify-center shadow-sm">
+            <svg
+              className="w-4 h-4 text-red-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+
+          {/* Tooltip on hover */}
+          <div className="absolute right-0 top-9 bg-gray-800 text-white text-xs rounded-lg px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
+            Video unavailable
           </div>
         </div>
       )}
 
       {/* Video Element */}
       <video
-        className={`w-full h-full object-contain bg-white transition-opacity duration-300 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
+        className={`w-full h-full object-contain bg-white transition-opacity duration-500 ${
+          showVideo ? 'opacity-100' : 'opacity-0'
         }`}
         autoPlay
         loop
@@ -147,6 +171,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
     </motion.div>
   );
 }
