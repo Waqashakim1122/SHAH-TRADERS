@@ -1,5 +1,6 @@
 import { Package, Eye, MousePointer, Gift, Lightbulb, Handshake } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import whoWeAreImage from '../assets/about-us/how-we-are.jpeg';
 
 export default function AboutUs() {
@@ -33,11 +34,9 @@ export default function AboutUs() {
               </span>
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At Shah Traders, Business isn't just what we do—it's in our DNA. As a Business
-              company with three generations of business expertise, we've grown into a trusted
-              partner for businesses across the U.S. Our full-service solutions cover every
-              aspect of the supply chain, from drayage and fulfillment to advanced technology
-              integrations.
+              At the heart of Shah Traders is a legacy of logistics excellence spanning three generations. 
+              Built on the foundation of personal connections and innovative solutions, our company reflects a hands-on leadership approach and a deep commitment to helping businesses succeed. 
+              We believe in finding smarter ways to solve logistical challenges, ensuring every client receives tailored solutions that drive their success forward.
             </p>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
               We focus on what matters most to our clients: reliable operations, clear
@@ -45,17 +44,22 @@ export default function AboutUs() {
               industry expertise, we provide transparency and efficiency at every step, helping
               businesses save time and money while avoiding costly mistakes.
             </p>
-            <button className="
-              px-8 py-4 rounded-2xl font-semibold text-white
-              bg-gradient-to-r from-cyan-500 to-blue-600
-              shadow-lg shadow-cyan-500/30
-              hover:shadow-cyan-500/60
-              hover:scale-105
-              transition-all duration-300
-              active:scale-95
-            ">
+
+            {/* ✅ FIXED: Book a Call now navigates to /get-quote */}
+            <Link
+              to="/get-quote"
+              className="
+                inline-block px-8 py-4 rounded-2xl font-semibold text-white
+                bg-gradient-to-r from-cyan-500 to-blue-600
+                shadow-lg shadow-cyan-500/30
+                hover:shadow-cyan-500/60
+                hover:scale-105
+                transition-all duration-300
+                active:scale-95
+              "
+            >
               Book a Call
-            </button>
+            </Link>
           </motion.div>
           
           <motion.div
@@ -106,9 +110,11 @@ export default function AboutUs() {
               we are
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At the heart of Shah Traders is a legacy of  businesses excellence spanning three generations. 
-              Built on the foundation of personal connections and innovative solutions, our company reflects a hands-on leadership approach and a deep commitment to helping businesses succeed. 
-              We believe in finding smarter ways to solve logistical challenges, ensuring every client receives tailored solutions that drive their success forward.
+              At the heart of Shah Traders is our visionary founder and CEO, Faisal Naseer. With logistics running through his family for three generations,
+              Faisal Naseer has built a company that values personal connections and
+              innovative solutions. His hands-on leadership reflects a deep
+              commitment to helping businesses succeed and finding smarter ways to
+              solve logistical challenges.
             </p>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
               At Shah Traders, we're more than just a logistics provider—we're a family
@@ -302,4 +308,3 @@ export default function AboutUs() {
     </section>
   );
 }
-
