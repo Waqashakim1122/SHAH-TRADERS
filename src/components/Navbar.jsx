@@ -45,6 +45,7 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
+                aria-label={`Navigate to ${item.label} page`}
                 className={`
                   font-medium transition-colors duration-200
                   ${isActive(item.path) 
@@ -60,6 +61,7 @@ export default function Navbar() {
             {/* Quote button */}
             <Link
               to="/get-quote"
+              aria-label="Request a quote from Shah Traders"
               className="
                 relative overflow-hidden
                 px-7 py-3 rounded-2xl font-semibold text-white
@@ -79,7 +81,8 @@ export default function Navbar() {
           <button
             className="md:hidden text-white focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -99,6 +102,7 @@ export default function Navbar() {
               key={item.path}
               to={item.path}
               onClick={() => setIsOpen(false)}
+              aria-label={`Navigate to ${item.label} page`}
               className={`
                 text-left text-lg transition-colors
                 ${isActive(item.path)
@@ -114,6 +118,7 @@ export default function Navbar() {
           <Link
             to="/get-quote"
             onClick={() => setIsOpen(false)}
+            aria-label="Request a quote from Shah Traders"
             className="
               mt-2 px-6 py-4 rounded-2xl font-semibold text-white text-center
               bg-gradient-to-r from-cyan-500 to-blue-600
