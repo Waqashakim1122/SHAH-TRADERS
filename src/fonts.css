@@ -1,0 +1,86 @@
+/* ===================================
+   Self-Hosted Fonts — Shah Traders
+   Replaces Google Fonts completely
+   Zero external requests
+=================================== */
+
+/* Inter — Light 300 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — Regular 400 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — Medium 500 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — SemiBold 600 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter — Bold 700 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Orbitron — Regular 400 */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Orbitron — Medium 500 */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Orbitron — Bold 700 */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Orbitron — Black 900 */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
