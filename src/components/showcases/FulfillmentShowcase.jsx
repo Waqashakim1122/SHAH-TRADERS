@@ -53,11 +53,12 @@ export default function FulfillmentShowcase() {
 
             <a
               href="./solutions/ecommerce-fulfillment"
-              className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
-            >
-              Learn more
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+  aria-label="Learn more about Ecommerce Fulfillment"
+  className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
+>
+  Learn more
+  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</a>
           </motion.div>
 
           {/* Desktop video */}
@@ -159,3 +160,4 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
+
