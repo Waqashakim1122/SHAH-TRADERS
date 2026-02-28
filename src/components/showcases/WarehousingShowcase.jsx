@@ -1,5 +1,6 @@
 // src/components/WarehousingShowcase.jsx
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -52,14 +53,14 @@ export default function WarehousingShowcase() {
               ))}
             </ul>
 
-            <a
-             href="./solutions/ware-housing"
+           <Link
+  to="/solutions/ware-housing"
   aria-label="Learn more about Warehousing Solutions"
   className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
 >
   Learn more
   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-</a>
+</Link>
           </motion.div>
 
           {/* Video on desktop */}
@@ -161,4 +162,5 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
+
 
