@@ -1,30 +1,24 @@
+// src/pages/HomePage.jsx
 import Hero from '../components/Hero';
 import BrandStrip from '../components/BrandStrip';
 import AnimationSection from '../components/AnimationSection';
-import { SolutionsIntro, FulfillmentShowcase, PackingLabelingShowcase, WarehousingShowcase } from '../components/showcases';
 import PricingSection from '../components/PricingSection';
 import Services from '../components/Services';
-import AboutUs from '../components/AboutUs'; // Changed from About to AboutUs
-
+import AboutUs from '../components/AboutUs';
 import ContactUs from '../components/ContactUs';
 import GetQuote from '../components/GetQuote';
 
-
-export default function HomePage({ setActiveModal }) {
+export default function HomePage() {
   return (
     <main>
       <Hero />
       <BrandStrip />
       <AnimationSection />
-      <SolutionsIntro />
-      <FulfillmentShowcase />
-      <PackingLabelingShowcase />
-      <WarehousingShowcase />
+      <Services />
       <PricingSection />
-   
-      <AboutUs /> {/* Using AboutUs component */}
+      <AboutUs />
       <ContactUs />
-      <GetQuote setActiveModal={setActiveModal} /> {/* Pass setActiveModal to GetQuote */}     
+      <GetQuote />
     </main>
   );
 }
