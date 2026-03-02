@@ -152,7 +152,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
         poster={posterImage}
         onLoadedData={handleLoadedData}
         onError={handleError}
-        preload="metadata"
+        preload="none"
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
@@ -161,5 +161,6 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
+
 
 
