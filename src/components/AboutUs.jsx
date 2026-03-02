@@ -181,7 +181,7 @@ Shah Traders was founded by a third-generation supply chain expert with a vision
             {[
               { value: "99.9%", label: "On-time delivery", color: "from-orange-400 to-orange-500" },
               { value: "99.9%", label: "Order accuracy", color: "from-cyan-400 to-cyan-500" },
-              { value: "3", label: "Generations of logistics expertise", color: "from-pink-400 to-pink-500" },
+              { value: "3", label: "Generations of fulfillment expertise", color: "from-pink-400 to-pink-500" },
               { value: "2M", label: "Orders fulfilled annually", color: "from-blue-400 to-blue-500" },
               { value: "15+", label: "Warehouses nationwide", color: "from-green-400 to-green-500" },
               { value: "100+", label: "System integrations", color: "from-purple-400 to-purple-500" }
@@ -248,7 +248,7 @@ Shah Traders was founded by a third-generation supply chain expert with a vision
               { 
                 icon: Gift, 
                 title: "Efficiency and Sustainability", 
-                desc: "We save time, reduce costs, and support sustainability with efficient, eco-friendly logistics from warehouse to delivery.", 
+                desc: "We save time, reduce costs, and support sustainability with efficient, eco-friendly operations from warehouse to delivery.", 
                 color: "cyan" 
               },
               { 
@@ -294,5 +294,6 @@ Shah Traders was founded by a third-generation supply chain expert with a vision
     </section>
   );
 }
+
 
 
