@@ -73,7 +73,7 @@ export default function AnimationSection() {
           <div className="flex justify-center lg:justify-end">
             <AnimationCard
               src="/Animation/ready-set-go.lottie"
-              posterImage="/Animation/ready-set-go-poster.jpg"
+              posterImage="/Animation/ready-set-go-poster.webp"
             />
           </div>
 
@@ -153,3 +153,4 @@ function AnimationCard({ src, posterImage }) {
     </motion.div>
   );
 }
+
