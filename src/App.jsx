@@ -1,14 +1,9 @@
 // src/App.jsx
-import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ServiceModal from './components/ServiceModal';
 import ScrollToTop from './components/ScrollToTop';
-
-
 // Page Components
 import HomePage from './pages/HomePage';
 import AboutUs from './components/AboutUs';
@@ -24,40 +19,30 @@ import WarehousingDetailPage from './pages/WarehousingDetailPage';
 import PackingLabelingDetailPage from './pages/PackingLabelingDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-
 export default function App() {
-  const [activeModal, setActiveModal] = useState(null);
-
   return (
     <BrowserRouter>
       <div className="bg-[#020617] text-light min-vh-100">
-         <ScrollToTop /> 
+        <ScrollToTop />
         <Navbar />
-        
+
         <Routes>
-          <Route path="/" element={<HomePage setActiveModal={setActiveModal} />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/calculator" element={<PricingSection />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/get-quote" element={<GetQuote />} />
-          <Route path="/solutions" element={<SolutionsPage setActiveModal={setActiveModal} />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/solutions/fulfillment" element={<FulfillmentPage />} />
           <Route path="/solutions/PackingLabeling" element={<PackingLabelingPage />} />
           <Route path="/solutions/warehousing" element={<WarehousingPage />} />
           <Route path="/solutions/ecommerce-fulfillment" element={<EcommerceFulfillmentDetailPage />} />
           <Route path="/solutions/ware-housing" element={<WarehousingDetailPage />} />
           <Route path="/solutions/packing-labeling" element={<PackingLabelingDetailPage />} />
-            <Route path="*" element={<NotFoundPage />} /> 
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
         <Footer />
-
-        {activeModal && (
-          <ServiceModal
-            serviceId={activeModal}
-            onClose={() => setActiveModal(null)}
-          />
-        )}
       </div>
     </BrowserRouter>
   );
