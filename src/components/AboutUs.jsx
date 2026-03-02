@@ -34,15 +34,10 @@ export default function AboutUs() {
               </span>
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At the heart of Shah Traders is a legacy of logistics excellence spanning three generations. 
-              Built on the foundation of personal connections and innovative solutions, our company reflects a hands-on leadership approach and a deep commitment to helping businesses succeed. 
-              We believe in finding smarter ways to solve logistical challenges, ensuring every client receives tailored solutions that drive their success forward.
+At the heart of Shah Traders is a three-generation legacy of fulfillment excellence, built on personal relationships and pioneering solutions. Our hands-on leadership philosophy drives everything we do — from warehouse to doorstep. We are committed to solving complex operational challenges with precision, ensuring every client receives a customized strategy that accelerates their success.
             </p>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              We focus on what matters most to our clients: reliable operations, clear
-              communication, and measurable savings. With our proprietary 
-              industry expertise, we provide transparency and efficiency at every step, helping
-              businesses save time and money while avoiding costly mistakes.
+             At Shah Traders, we remain laser-focused on what our clients need most — reliable operations, clear and consistent communication, and savings they can measure. Leveraging generations of proprietary industry expertise, we bring unparalleled transparency and operational efficiency to every step of the process. The result: businesses that move faster, spend smarter, and avoid the costly pitfalls that derail growth
             </p>
 
             {/* ✅ FIXED: Book a Call now navigates to /get-quote */}
@@ -308,3 +303,4 @@ export default function AboutUs() {
     </section>
   );
 }
+
