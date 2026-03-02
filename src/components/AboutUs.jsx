@@ -105,19 +105,10 @@ At the heart of Shah Traders is a three-generation legacy of fulfillment excelle
               we are
             </h2>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At the heart of Shah Traders is our visionary founder and CEO, Faisal Naseer. With logistics running through his family for three generations,
-              Faisal Naseer has built a company that values personal connections and
-              innovative solutions. His hands-on leadership reflects a deep
-              commitment to helping businesses succeed and finding smarter ways to
-              solve logistical challenges.
+Shah Traders was founded by a third-generation supply chain expert with a vision to build something different. Our hands-on leadership and commitment to personal relationships have shaped a company where every client is treated as a partner, and every challenge is met with precision, innovation, and care
             </p>
             <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light">
-              At Shah Traders, we're more than just a logistics provider—we're a family
-              dedicated to your success. We've built our reputation on reliability,
-              transparency, and personal relationships with our clients. Every
-              shipment, every call, and every detail is handled with care by our expert
-              team, who work directly from our strategically located warehouses
-              across the U.S.
+             At Shah Traders, we are far more than a fulfillment partner — we are a family built around your success. Our reputation has been earned through decades of unwavering reliability, complete transparency, and meaningful client relationships that go beyond business. Every shipment, every call, and every detail is treated with the highest level of care and precision by our expert team — working hands-on from our strategically positioned fulfillment centers nationwide across the U.S.
             </p>
           </motion.div>
         </div>
@@ -303,4 +294,5 @@ At the heart of Shah Traders is a three-generation legacy of fulfillment excelle
     </section>
   );
 }
+
 
