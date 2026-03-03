@@ -13,7 +13,7 @@ export default function PackingLabelingShowcase() {
 
       <div className="relative container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-          
+
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -30,7 +30,7 @@ export default function PackingLabelingShowcase() {
               Professional packing and custom labeling services to ensure your products arrive safely and look perfect. From custom inserts to branded packaging, we handle every detail so your customers receive an exceptional unboxing experience.
             </p>
 
-            {/* Video on mobile */}
+            {/* Video on mobile only */}
             <div className="lg:hidden my-10">
               <VideoOnlyCard
                 videoSrc="/videos/packing-labeling-demo.mp4"
@@ -52,17 +52,18 @@ export default function PackingLabelingShowcase() {
                 </li>
               ))}
             </ul>
-<Link
-  to="/solutions/packing-labeling"
-  aria-label="Learn more about Packing and Labeling Services"
-  className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
->
-  Learn more
-  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-</Link>
+
+            <Link
+              to="/solutions/packing-labeling"
+              aria-label="Learn more about Packing and Labeling Services"
+              className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
+            >
+              Learn more
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
 
-          {/* Video on desktop */}
+          {/* Video on desktop only */}
           <div className="hidden lg:flex lg:justify-center lg:items-center lg:order-1">
             <VideoOnlyCard
               videoSrc="/videos/packing-labeling-demo.mp4"
@@ -109,17 +110,17 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
         relative
       "
     >
-
       {/* Poster Image - visible until video is ready */}
       <div className={`absolute inset-0 transition-opacity duration-500 ${showVideo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <img
           src={posterImage}
           alt="Packing and labeling preview"
           className="w-full h-full object-contain"
+          loading="lazy"
         />
       </div>
 
-      {/* Three Dots Loading Indicator - Top Right Corner */}
+      {/* Three Dots Loading - Top Right */}
       {isLoading && !hasError && (
         <div className="absolute top-4 right-4 flex gap-1.5 z-20">
           <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -128,10 +129,9 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
         </div>
       )}
 
-      {/* Small Error Icon - Top Right Corner (same position as dots) */}
+      {/* Small Error Icon - Top Right */}
       {hasError && (
         <div className="absolute top-4 right-4 z-20 group cursor-pointer">
-          {/* Small red circle icon */}
           <div className="w-7 h-7 rounded-full bg-red-100 border border-red-300 flex items-center justify-center shadow-sm">
             <svg
               className="w-4 h-4 text-red-500"
@@ -147,15 +147,13 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
               />
             </svg>
           </div>
-
-          {/* Tooltip on hover */}
           <div className="absolute right-0 top-9 bg-gray-800 text-white text-xs rounded-lg px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
             Video unavailable
           </div>
         </div>
       )}
 
-      {/* Video Element */}
+      {/* Video */}
       <video
         className={`w-full h-full object-contain bg-white transition-opacity duration-500 ${
           showVideo ? 'opacity-100' : 'opacity-0'
@@ -167,7 +165,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
         poster={posterImage}
         onLoadedData={handleLoadedData}
         onError={handleError}
-preload="none"
+        preload="none"
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
@@ -176,9 +174,3 @@ preload="none"
     </motion.div>
   );
 }
-
-
-
-
-
-
