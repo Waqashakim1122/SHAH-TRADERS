@@ -1,7 +1,7 @@
 import { Package, Eye, MousePointer, Gift, Lightbulb, Handshake } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import whoWeAreImage from '../assets/about-us/how-we-are.jpeg';
+import whoWeAreImage from '../assets/about-us/how-we-are.webp';
 
 export default function AboutUs() {
   return (
@@ -294,6 +294,7 @@ Shah Traders was founded by a third-generation supply chain expert with a vision
     </section>
   );
 }
+
 
 
 
