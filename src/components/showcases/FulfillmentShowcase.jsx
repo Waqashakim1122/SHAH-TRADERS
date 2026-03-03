@@ -34,7 +34,7 @@ export default function FulfillmentShowcase() {
             <div className="lg:hidden my-10">
               <VideoOnlyCard
                 videoSrc="/videos/fulfillment-center-demo.mp4"
-                posterImage="/videos/fulfillment-poster.jpg"
+                posterImage="/videos/fulfillment-poster.webp"
               />
             </div>
 
@@ -161,6 +161,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
+
 
 
 
