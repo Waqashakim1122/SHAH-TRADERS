@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import hero1 from '../assets/Hero/image1.jpg';
-import hero2 from '../assets/Hero/image2.jpg';
-import hero3 from '../assets/Hero/image3.jpg';
-import hero4 from '../assets/Hero/image4.jpg';
+import hero1 from '../assets/Hero/image1.webp';
+import hero2 from '../assets/Hero/image2.webp';
+import hero3 from '../assets/Hero/image3.webp';
+import hero4 from '../assets/Hero/image4.webp';
 
 const backgrounds = [hero1, hero2, hero3, hero4];
 
