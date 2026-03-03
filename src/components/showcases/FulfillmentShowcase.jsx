@@ -66,7 +66,7 @@ export default function FulfillmentShowcase() {
           <div className="hidden lg:flex lg:justify-center lg:items-center">
             <VideoOnlyCard
               videoSrc="/videos/fulfillment-center-demo.mp4"
-              posterImage="/videos/fulfillment-poster.jpg"
+              posterImage="/videos/fulfillment-poster.webp"
             />
           </div>
 
@@ -161,6 +161,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
+
 
 
 
