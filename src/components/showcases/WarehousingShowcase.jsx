@@ -30,7 +30,7 @@ export default function WarehousingShowcase() {
               We offer clear and transparent invoices and advanced reporting - all in one place. Check your KPIs and metrics daily. Know what ships each day and all your costs!
             </p>
 
-            {/* Video on mobile */}
+            {/* Video on mobile only */}
             <div className="lg:hidden my-10">
               <VideoOnlyCard
                 videoSrc="/videos/warehouse-operations-demo.mp4"
@@ -53,17 +53,17 @@ export default function WarehousingShowcase() {
               ))}
             </ul>
 
-           <Link
-  to="/solutions/ware-housing"
-  aria-label="Learn more about Warehousing Solutions"
-  className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
->
-  Learn more
-  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-</Link>
+            <Link
+              to="/solutions/ware-housing"
+              aria-label="Learn more about Warehousing Solutions"
+              className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
+            >
+              Learn more
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
 
-          {/* Video on desktop */}
+          {/* Video on desktop only */}
           <div className="hidden lg:flex lg:justify-center lg:items-center">
             <VideoOnlyCard
               videoSrc="/videos/warehouse-operations-demo.mp4"
@@ -116,6 +116,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
           src={posterImage}
           alt="Warehousing preview"
           className="w-full h-full object-contain bg-white"
+          loading="lazy"
         />
       </div>
 
@@ -136,7 +137,6 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          {/* Tooltip */}
           <div className="absolute right-0 top-9 bg-gray-800 text-white text-xs rounded-lg px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
             Video unavailable
           </div>
@@ -162,8 +162,3 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
-
-
-
-
-
