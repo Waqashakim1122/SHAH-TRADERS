@@ -34,7 +34,7 @@ export default function WarehousingShowcase() {
             <div className="lg:hidden my-10">
               <VideoOnlyCard
                 videoSrc="/videos/warehouse-operations-demo.mp4"
-                posterImage="/videos/warehouse-poster.jpg"
+                posterImage="/videos/warehouse-poster.webp"
               />
             </div>
 
@@ -162,6 +162,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
+
 
 
 
