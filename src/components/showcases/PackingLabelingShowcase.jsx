@@ -66,7 +66,7 @@ export default function PackingLabelingShowcase() {
           <div className="hidden lg:flex lg:justify-center lg:items-center lg:order-1">
             <VideoOnlyCard
               videoSrc="/videos/packing-labeling-demo.mp4"
-              posterImage="/videos/packing-labeling-poster.jpg"
+              posterImage="/videos/packing-labeling-poster.webp"
             />
           </div>
 
@@ -176,6 +176,7 @@ preload="none"
     </motion.div>
   );
 }
+
 
 
 
