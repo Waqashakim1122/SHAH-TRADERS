@@ -30,7 +30,7 @@ export default function FulfillmentShowcase() {
               Run detailed quotes to check prices and transit times. Use our system to set up custom rate shopping! Check your order status while it's in the warehouse and once it ships - you receive live updates throughout the process!
             </p>
 
-            {/* Mobile video */}
+            {/* Video on mobile only */}
             <div className="lg:hidden my-10">
               <VideoOnlyCard
                 videoSrc="/videos/fulfillment-center-demo.mp4"
@@ -52,17 +52,17 @@ export default function FulfillmentShowcase() {
               ))}
             </ul>
 
-           <Link
-  to="/solutions/ecommerce-fulfillment"
-  aria-label="Learn more about Ecommerce Fulfillment"
-  className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
->
-  Learn more
-  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-</Link>
+            <Link
+              to="/solutions/ecommerce-fulfillment"
+              aria-label="Learn more about Ecommerce Fulfillment"
+              className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-base sm:text-lg mt-6 transition-colors"
+            >
+              Learn more
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
 
-          {/* Desktop video */}
+          {/* RIGHT - Video on desktop only */}
           <div className="hidden lg:flex lg:justify-center lg:items-center">
             <VideoOnlyCard
               videoSrc="/videos/fulfillment-center-demo.mp4"
@@ -115,6 +115,7 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
           src={posterImage}
           alt="Fulfillment preview"
           className="w-full h-full object-contain bg-white"
+          loading="lazy"
         />
       </div>
 
@@ -135,7 +136,6 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          {/* Tooltip */}
           <div className="absolute right-0 top-9 bg-gray-800 text-white text-xs rounded-lg px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
             Video unavailable
           </div>
@@ -161,8 +161,3 @@ function VideoOnlyCard({ videoSrc, posterImage }) {
     </motion.div>
   );
 }
-
-
-
-
-
