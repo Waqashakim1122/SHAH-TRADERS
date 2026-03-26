@@ -110,12 +110,12 @@ export default function GetQuote() {
             <span className="text-cyan-400 text-xs font-bold uppercase tracking-[0.4em]">Get Started</span>
             <span className="h-px w-8 bg-gradient-to-l from-transparent to-cyan-400" />
           </div>
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight tracking-wide">
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight tracking-wide">
             Get a{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
               Quote
             </span>
-          </h1>
+          </h2>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
             See how Shah Traders can save you time and money. Choose the option that works best for you.
           </p>
