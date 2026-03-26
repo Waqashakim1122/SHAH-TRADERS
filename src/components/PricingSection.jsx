@@ -98,9 +98,9 @@ export default function PricingCalculator() {
               <span className="text-cyan-400 text-xs font-bold uppercase tracking-[0.4em]">Pricing Calculator</span>
               <span className="h-px w-8 bg-gradient-to-l from-transparent to-cyan-400" />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 tracking-wide">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 tracking-wide">
               Quote <span className="bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">Calculator</span>
-            </h1>
+            </h2>
             <p className="text-gray-400 text-lg max-w-2xl">
               Get an instant estimate for your 3PL needs with transparent pricing
             </p>
