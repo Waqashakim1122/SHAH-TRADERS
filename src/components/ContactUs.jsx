@@ -98,10 +98,10 @@ export default function ContactUs() {
             <span className="text-cyan-400 text-xs font-bold uppercase tracking-[0.4em]">Get in Touch</span>
             <span className="h-px w-10 bg-gradient-to-l from-transparent to-cyan-400" />
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
             Contact{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-600">Us</span>
-          </h1>
+          </h2>
           <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-light">
             We're here to help with any questions about our 3PL solutions.
           </p>
